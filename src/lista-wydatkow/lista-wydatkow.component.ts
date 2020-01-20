@@ -17,4 +17,8 @@ export class ListaWydatkowComponent implements OnInit {
      this.wydatki = this.wydatkiService.getWydatki();
    }
 
+   usunWydatek(id: number) {
+    this.wydatkiService.usunWydatek(id);
+  }
+
 }

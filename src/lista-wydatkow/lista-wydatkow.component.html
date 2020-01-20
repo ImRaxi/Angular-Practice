@@ -5,6 +5,7 @@
         <th>Kwota</th>
         <th>Opis</th>
         <th>Litry / Kilometry</th>
+        <th></th>
     </tr>
     <tr *ngFor="let wydatek of wydatki">
         <td>{{wydatek.kategoria}}</td>
@@ -16,5 +17,9 @@
           <span *ngIf="wydatek.ileLitrow != null && wydatek.ileKm != null"> /  </span>
           <span *ngIf="wydatek.ileKm != null">{{wydatek.ileKm}} km</span>
         </td>
+        <td *ngIf="wydatek.ileLitrow == null && wydatek.ileKm == null"></td>
+        <td>
+        <button class="btn btn-danger" (click)="usunWydatek(wydatek.id)">Usuń</button>
+      </td>
     </tr>
 </table>
